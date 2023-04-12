@@ -24,8 +24,9 @@ export default function Food(){
 
 }
 // API Link for future reference
-//get category: https://any-api.com/je_apis_com/je_apis_com/docs/menus/GetCategoriesForMenu
-//get products: https://public.je-apis.com/menus/{menuId}/productcategories/{categoryId}/products
+//Pizza and Desserts api key: 103ddd65b7msh1a7b70cf504bb14p173c35jsnd33e6361294d
+//api host: pizza-and-desserts.p.rapidapi.com
+//url: https://pizza-and-desserts.p.rapidapi.com/pizzas/1
 const MenuCard = (props)=>{
     const [menuState, setMenu] = useState('');
     

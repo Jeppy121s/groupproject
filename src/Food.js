@@ -8,7 +8,7 @@ export default function Food(){
     <button>Fried Chicken</button>
    </div>
    <div>
-    <button>Salad</button>
+    <button >Salad</button>
     </div>
     <div>
     <button>Pizza</button>

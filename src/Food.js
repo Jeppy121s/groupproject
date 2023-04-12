@@ -1,4 +1,6 @@
 import { Button } from "bootstrap"
+import React,{useState, useEffect} from 'react'
+import ReactDom from 'react-dom'
 
 export default function Food(){
     return<div>
@@ -20,6 +22,17 @@ export default function Food(){
     </div>
     
 
+}
+
+const MenuCard = (props)=>{
+    const [menuState, setMenu] = useState('');
+    
+    useEffect(()=>{
+        
+        
+    },[]
+    )
+    
 }
 
 function listFood(){

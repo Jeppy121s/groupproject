@@ -68,8 +68,8 @@ export default function Food() {
     return (
       <ul>
 {menuState.map(item=>(
-  <li key={item.id}>
-    {item.title} <img src ={item.image}/>
+  <li key={item.id} onClick={clickEvent}>
+    {item.title} <img src={item.image} alt="different items" width={70} height={70} />
     </li>
     ))}
 
@@ -79,3 +79,6 @@ export default function Food() {
   }
 }
 
+const clickEvent = ()=>{
+  alert ("this item has been selected")
+};

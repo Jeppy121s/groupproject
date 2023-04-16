@@ -12,7 +12,7 @@ export default function Food() {
 
 
 
-   const [menuState, setMenu] = useState([]);
+   const [menuState, setMenu] = useState();
 
    const options = {
 
@@ -34,7 +34,7 @@ export default function Food() {
 
 
 
-   useEffect(() => {
+   React.useEffect(() => {
 
 
 
@@ -44,8 +44,11 @@ export default function Food() {
 
       .then((json) => {
 
-         setMenu(json);
-
+         //setMenu.apply(json);
+          for(let i =0; i < 10; i++){
+            setMenu.apply(json[i]);
+          };
+          
          console.log(json);
 
       });
@@ -66,9 +69,11 @@ export default function Food() {
 
 
 
-   return <div>
-
-    
+   return (<div className='Food'>
+     
+     <li>
+     {menuState[0].title}
+       </li>
 
      <div>Food page
 
@@ -131,5 +136,5 @@ export default function Food() {
 
 
    </div>
-
+   )
 }

@@ -72,7 +72,7 @@ export default function Food() {
    return (<div className='Food'>
      
      <li>
-     {menuState[0].title}
+     {menuState.title}
        </li>
 
      <div>Food page

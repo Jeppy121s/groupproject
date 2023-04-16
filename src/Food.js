@@ -12,8 +12,10 @@ export default function Food() {
 
 
 
-   const [menuState, setMenu] = useState();
-
+   const [menuState, setMenu] = useState([]);
+   const [error,setError]=useState(null)
+   const [loaded,isLoaded]=useState(false);
+   
    const options = {
 
      method: 'GET',
@@ -34,7 +36,7 @@ export default function Food() {
 
 
 
-   React.useEffect(() => {
+   useEffect(() => {
 
 
 
@@ -44,11 +46,8 @@ export default function Food() {
 
       .then((json) => {
 
-         //setMenu.apply(json);
-          for(let i =0; i < 10; i++){
-            setMenu.apply(json[i]);
-          };
-          
+         setMenu(json);
+
          console.log(json);
 
       });
@@ -61,80 +60,22 @@ export default function Food() {
 
   }, []);
 
+ if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <ul>
+{menuState.map(item=>(
+  <li key={item.id}>
+    {item.title} <img src ={item.image}/>
+    </li>
+    ))}
 
+</ul>
 
-
-
-
-
-
-
-   return (<div className='Food'>
-     
-     <li>
-     {menuState.title}
-       </li>
-
-     <div>Food page
-
-
-
-     </div>
-
-
-
-     <div>
-
-
-
-       <button>Fried Chicken</button>
-
-
-
-     </div>
-
-
-
-     <div>
-
-
-
-       <button >Salad</button>
-
-
-
-     </div>
-
-
-
-     <div>
-
-
-
-       <button>Pizza</button>
-
-
-
-     </div>
-
-
-
-     <div>
-
-
-
-       <button href="App.css">French Fries</button>
-
-
-
-     </div>
-
-
-
-
-
-
-
-   </div>
-   )
+);
+  }
 }
+

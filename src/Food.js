@@ -34,6 +34,7 @@ export default function Food() {
     return <div>Loading...</div>;
   } else {
     return (
+       
       <ul>
         {menuState.map((item) => (
           <li key={item.id} onClick={clickEvent}>
